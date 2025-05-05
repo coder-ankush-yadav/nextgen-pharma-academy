@@ -102,25 +102,6 @@ function App() {
               </ul>
             </div>
           </div>
-
-          <div className="mt-12">
-            <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Admission Enquiry Form</h3>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <iframe 
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdpftpzqhYe0W_22oCnoSNqYcxgsQq8zPwbWEhueqAeD_XYHg/viewform?embedded=true" 
-                  width="100%" 
-                  height="1968" 
-                  frameBorder="0" 
-                  marginHeight="0" 
-                  marginWidth="0"
-                  className="min-h-[500px]"
-                >
-                  Loading…
-                </iframe>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -311,24 +292,19 @@ function App() {
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <div className="space-y-6 text-gray-600">
                 <div>
-                  <h4 className="text-lg font-semibold mb-4">Our Location</h4>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>Mumbai, Maharashtra</li>
-                  </ul>
+                  <h3 className="font-semibold text-gray-900 text-lg mb-2">Address</h3>
+                  <p>123 Education Street, Medical District</p>
+                  <p>Mumbai, Maharashtra 400001</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>Phone: +91 82918 07935</li>
-                    <li>Email: nextgenpharmaacademy@gmail.com</li>
-                  </ul>
+                  <h3 className="font-semibold text-gray-900 text-lg mb-2">Contact Information</h3>
+                  <p>Phone: +91 (123) 456-7890</p>
+                  <p>Email: admissions@nextgenpharma.edu</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold mb-4">Office Hours</h4>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
-                    <li>Saturday: 9:00 AM - 1:00 PM</li>
-                  </ul>
+                  <h3 className="font-semibold text-gray-900 text-lg mb-2">Office Hours</h3>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                  <p>Saturday: 9:00 AM - 1:00 PM</p>
                 </div>
               </div>
             </div>
@@ -369,15 +345,18 @@ function App() {
                 training, preparing students for successful careers in the pharmaceutical industry.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <Building2 className="h-6 w-6 text-blue-600 mb-2" />
-                  <h3 className="font-semibold text-gray-900">Modern Facilities</h3>
-                  <p className="text-sm text-gray-600">State-of-the-art laboratories and classrooms</p>
+                <div>
+                  <h4 className="text-lg font-semibold mb-4">Our Location</h4>
+                  <ul className="space-y-2 text-gray-400">
+                    <li>Mumbai, Maharashtra</li>
+                  </ul>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <Clock className="h-6 w-6 text-blue-600 mb-2" />
-                  <h3 className="font-semibold text-gray-900">Expert Faculty</h3>
-                  <p className="text-sm text-gray-600">Experienced professionals as mentors</p>
+                <div>
+                  <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+                  <ul className="space-y-2 text-gray-400">
+                    <li>Phone: +91 82918 07935</li>
+                    <li>Email: nextgenpharmaacademy@gmail.com</li>
+                  </ul>
                 </div>
               </div>
             </div>
