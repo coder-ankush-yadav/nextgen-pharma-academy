@@ -1,7 +1,13 @@
-import React from 'react';
-import { Pill, GraduationCap, Phone, Users, ChevronDown, ScrollText, Building2, Clock, FileQuestion, BookOpen, IndianRupee, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Pill, GraduationCap, Phone, Users, ChevronDown, ScrollText, FileQuestion, BookOpen, IndianRupee, CheckCircle, Menu, X } from 'lucide-react';
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -21,10 +27,87 @@ function App() {
               <a href="#fees" className="text-gray-600 hover:text-blue-600">Fees</a>
               <a href="#faq" className="text-gray-600 hover:text-blue-600">FAQ</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
+              <a href="#enquiry-form" className="text-gray-600 hover:text-blue-600">Enquiry Form</a>
               <a href="#about" className="text-gray-600 hover:text-blue-600">About</a>
+            </div>
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={toggleMobileMenu}
+                className="text-gray-600 hover:text-blue-600 focus:outline-none"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
             </div>
           </div>
         </div>
+        
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a 
+                href="#home" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Home
+              </a>
+              <a 
+                href="#admission" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Admission
+              </a>
+              <a 
+                href="#courses" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Courses
+              </a>
+              <a 
+                href="#fees" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Fees
+              </a>
+              <a 
+                href="#faq" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                FAQ
+              </a>
+              <a 
+                href="#contact" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </a>
+              <a 
+                href="#enquiry-form" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                Enquiry Form
+              </a>
+              <a 
+                href="#about" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                onClick={toggleMobileMenu}
+              >
+                About
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -53,7 +136,7 @@ function App() {
               <a href="#courses" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300">
                 Explore Our Programs
               </a>
-              <a href="#admission" className="inline-block bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition duration-300">
+              <a href="#enquiry-form" className="inline-block bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition duration-300">
                 Enquire Now
               </a>
             </div>
@@ -319,6 +402,34 @@ function App() {
         </div>
       </section>
 
+      {/* Enquiry Form Section */}
+      <section id="enquiry-form" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <ScrollText className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-gray-900">Admission Enquiry</h2>
+            <p className="mt-4 text-gray-600">Fill out the form below to get in touch with our admission team</p>
+          </div>
+          <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+            <div className="w-full overflow-hidden">
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdpftpzqhYe0W_22oCnoSNqYcxgsQq8zPwbWEhueqAeD_XYHg/viewform?embedded=true" 
+                width="100%" 
+                height="1968" 
+                frameBorder="0" 
+                marginHeight={0} 
+                marginWidth={0}
+                loading="lazy"
+                title="Admission Enquiry Form"
+                style={{ fontFamily: 'Roboto, sans-serif' }}
+              >
+                Loading…
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,25 +451,20 @@ function App() {
                 We provide comprehensive training in pharmaceutical sciences with state-of-the-art facilities and 
                 experienced faculty members.
               </p>
-              <p>
+              <p className="mb-4">
                 Our focus is on delivering quality education that combines theoretical knowledge with practical 
                 training, preparing students for successful careers in the pharmaceutical industry.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Our Location</h4>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>Mumbai, Maharashtra</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-                  <ul className="space-y-2 text-gray-400">
-                    <li>Phone: +91 82918 07935</li>
-                    <li>Email: nextgenpharmaacademy@gmail.com</li>
-                  </ul>
-                </div>
-              </div>
+              <p className="mb-4">
+                At NextGen Pharma Academy, we believe in a student-centered approach to education. Our curriculum 
+                is designed to meet the evolving needs of the pharmaceutical industry, ensuring that our graduates 
+                are well-equipped to face the challenges of the modern healthcare system.
+              </p>
+              <p>
+                Our faculty consists of experienced professionals with extensive industry experience, providing 
+                students with insights into real-world pharmaceutical practices. We also maintain strong ties with 
+                leading pharmaceutical companies, creating opportunities for internships and placements.
+              </p>
             </div>
           </div>
         </div>
