@@ -1,5 +1,5 @@
 import { GraduationCap, Phone, Users, ChevronDown, Building2, Clock } from 'lucide-react';
-import logo from '../dist/assets/nextgenlogo-removebg-preview.png';
+import logo from '/nextgenlogo-removebg-preview.png';
 
 function App() {
   return (
